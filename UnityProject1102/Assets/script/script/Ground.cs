@@ -15,7 +15,6 @@ public class Ground : MonoBehaviour
     {
         // 呼叫自己的方法  print 則是呼叫官方的方法
         Move();
-
     }
 
     // 方法/函式 Method / function 語法;

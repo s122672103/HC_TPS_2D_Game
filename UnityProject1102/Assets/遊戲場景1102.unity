@@ -964,6 +964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Score: 0
   BestScore: 0
+  pipe: {fileID: 2668852747914937567, guid: ddd45b109da2dff4dbd621acfc704c10, type: 3}
 --- !u!4 &718501617
 Transform:
   m_ObjectHideFlags: 0
@@ -1076,7 +1077,7 @@ Transform:
   m_GameObject: {fileID: 721226142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.7445064, y: 4.7445064, z: 4.7445064}
+  m_LocalScale: {x: 3.6441364, y: 3.6441364, z: 3.6441364}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1295,7 +1296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1514082550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,7 +1525,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 90bce157c936d554682e5bf0be81f318, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1562,7 +1563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c217bec4c384fdd49a3cc59c8935b422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   ground: {fileID: 2009011241}
 --- !u!61 &2009011243
 BoxCollider2D:
