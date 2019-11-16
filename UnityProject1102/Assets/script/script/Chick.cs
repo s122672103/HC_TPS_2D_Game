@@ -12,7 +12,7 @@ public class Chick : MonoBehaviour
     /// </summary>
     public void Jump()
     {
-
+        
     }
 
     /// <summary>
@@ -20,6 +20,8 @@ public class Chick : MonoBehaviour
     /// </summary>
     public void Dead()
     {
-
+        
     }
+    
+ 
 }
