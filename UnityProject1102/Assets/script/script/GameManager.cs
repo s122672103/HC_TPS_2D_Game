@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [Header("水管")]
     //可存放 場景上的遊戲物件 與 專案內的預製物
     public GameObject pipe;
-
+ 
     
 
     /// <summary>
@@ -45,8 +45,12 @@ public class GameManager : MonoBehaviour
         // Quaternion. identity 代表零角度
         // Random.Range(int,int) 隨機數值 
 
+       
         Vector3 pos = new Vector3(8, Random.Range(0, 3), 0);
         Instantiate(pipe, pos, Quaternion.identity);
+
+        
+
         
     }
 
@@ -61,6 +65,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //重複調用指令("方法名稱", 開始時間 , 間隔時間浮點數)
+
+
+
         InvokeRepeating("SpawnPipe", 0, 3.0f);
     }
 
