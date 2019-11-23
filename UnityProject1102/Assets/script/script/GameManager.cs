@@ -1,25 +1,33 @@
 ﻿
 using UnityEngine;
-
+using UnityEngine.UI; //引用UI介面
 public class GameManager : MonoBehaviour
 {
 
     [Header("目前分數")]
-    public int Score = 0; //目前分數
+    public int score = 0; // 目前分數
     [Header("最佳分數")]
-    public int BestScore = 0; //最佳分數
+    public int bestScore = 0; // 最佳分數
     [Header("水管")]
-    //可存放 場景上的遊戲物件 與 專案內的預製物
+    // GameObject 可存放 場景上的遊戲物件 與 專案內的預製物
     public GameObject pipe;
- 
-    
+    [Header("遊戲結算畫面")]
+    public GameObject goFinal;
+    [Header("遊戲結束")]
+    //加上 static 就不會顯示在屬性面板上
+    public static bool gameOver;
+    [Header("分數介面")]
+    public Text textScore;
+
 
     /// <summary>
     /// 加分的方法。
     /// </summary>
     public void AddScore()
     {
-
+        score++;
+        // 分數介面.文字內容 = 分數.轉為字串();
+        textScore.text = score.ToString();
     }
 
     /// <summary>
@@ -55,19 +63,17 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 遊戲失敗的判定方法。
+    /// 遊戲失敗後 方法。
     /// </summary>
     public void GameOver()
     {
-
-
+        goFinal.SetActive(true); //顯示結算畫面
+        gameOver = true;         //遊戲結束 = 是
+        CancelInvoke("SpawnPipe");  //停止 InvokeRepeating「重複調用」的方法
     }
     private void Start()
     {
         //重複調用指令("方法名稱", 開始時間 , 間隔時間浮點數)
-
-
-
         InvokeRepeating("SpawnPipe", 0, 3.0f);
     }
 

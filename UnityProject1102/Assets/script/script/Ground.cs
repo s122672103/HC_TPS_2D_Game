@@ -26,6 +26,10 @@ public class Ground : MonoBehaviour
     /// </summary>
         private void Move()
     {
+        //如果GM.遊戲結束 為勾選true 就跳過底下方法
+        if (GameManager.gameOver) return;
+        
+
         //地板位移的方法(下面一條是官方網站給的方法)
         //地板.位移(x, y, z); 減號用來顛倒預設的運動方向
         //Time.deltaTime 跑每幀的所需時間單位 乘上它,讓性能不同的裝置擁有一致的表現 
