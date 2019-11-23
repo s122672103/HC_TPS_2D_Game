@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     //可存放 場景上的遊戲物件 與 專案內的預製物
     public GameObject pipe;
 
-
+    
 
     /// <summary>
     /// 加分的方法。
@@ -50,18 +50,18 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void Start()
-    {
-        //重複調用指令("方法名稱", 開始時間 , 間隔時間浮點數)
-        InvokeRepeating("SpawnPipe", 0, 3.0f);
-    }
-
     /// <summary>
     /// 遊戲失敗的判定方法。
     /// </summary>
     public void GameOver()
     {
 
+
+    }
+    private void Start()
+    {
+        //重複調用指令("方法名稱", 開始時間 , 間隔時間浮點數)
+        InvokeRepeating("SpawnPipe", 0, 3.0f);
     }
 
 
