@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601177a101f80734592aa379e937b049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 245
+  jumpHeight: 235
   angle: 5
   death: 0
   rb2D: {fileID: 721226147}

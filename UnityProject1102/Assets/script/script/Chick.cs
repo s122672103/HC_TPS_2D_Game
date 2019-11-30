@@ -68,12 +68,14 @@ public class Chick : MonoBehaviour
 
             // 開始遊戲時啟動重力環境(初始為無重力狀態 gravityScale = 0)
             // 小雞剛體.重力數值屬性 指定為1
-            rb2D.gravityScale = 1;
+            rb2D.gravityScale = 0.5f;
 
             //小雞往上跳
             //對小雞的剛體施加一個y軸(向上)方向的推力
             //小雞剛體.增加推力方法.(二維向量(上下,左右));
             rb2D.AddForce(new Vector2(0, -jumpHeight));
+
+        
         }
 
 
