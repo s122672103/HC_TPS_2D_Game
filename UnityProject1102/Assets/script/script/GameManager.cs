@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
-using UnityEngine.UI; //引用UI介面
+using UnityEngine.UI; //引用UI介面API
+using UnityEngine.SceneManagement;   //引用場景管理API
 public class GameManager : MonoBehaviour
 {
 
@@ -18,7 +19,10 @@ public class GameManager : MonoBehaviour
     public static bool gameOver;
     [Header("分數介面")]
     public Text textScore;
+    public Text textBest;
+    
 
+    
 
     /// <summary>
     /// 加分的方法。
@@ -28,6 +32,18 @@ public class GameManager : MonoBehaviour
         score++;
         // 分數介面.文字內容 = 分數.轉為字串();
         textScore.text = score.ToString();
+        //  呼叫最佳分數判定
+        HighScore();
+
+        if (score % 3 == 0 && score > 2)
+        {
+            if (Ground.speed >= 10f)
+            {
+                return;
+            }
+            Ground.speed += 0.5f;
+        }
+      
     }
 
     /// <summary>
@@ -35,6 +51,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void HighScore()
     {
+        if (score > PlayerPrefs.GetInt("最高得分"))
+        {
+            PlayerPrefs.SetInt("最高得分", score);
+        }
 
     }
 
@@ -63,7 +83,7 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 遊戲失敗後 方法。
+    /// 遊戲失敗。
     /// </summary>
     public void GameOver()
     {
@@ -71,10 +91,37 @@ public class GameManager : MonoBehaviour
         gameOver = true;         //遊戲結束 = 是
         CancelInvoke("SpawnPipe");  //停止 InvokeRepeating「重複調用」的方法
     }
+
+    //要給UI按鈕呼叫的方法必須是public
+
+     /// <summary>
+     /// 重新遊戲
+     /// </summary>
+    public void Replay()
+    {
+        // Application.LoadLevel("遊戲場景1102"); // 應用程式.載入場景("場景名稱"); 舊版API
+        SceneManager.LoadScene("遊戲場景1102");   // 場景管理器.載入場景("場景名稱"); 新版API
+
+    }
+
+    /// <summary>
+    /// 離開遊戲
+    /// </summary>
+    public void Quit()
+    {
+        Application.Quit(); //使用 應用程式.離開();
+    }
+
     private void Start()
     {
+        Screen.SetResolution(720, 1280, false); //螢幕.設定解析度 (寬,高,是否全螢幕);
+        //靜態成員在載入場景時不會自動還原(故需在Start中設定還原)
+        gameOver = false;
         //重複調用指令("方法名稱", 開始時間 , 間隔時間浮點數)
-        InvokeRepeating("SpawnPipe", 0, 3.0f);
+        InvokeRepeating("SpawnPipe", 0, 2.7f);
+        
+        textBest.text = PlayerPrefs.GetInt("最高得分").ToString();
+
     }
 
 

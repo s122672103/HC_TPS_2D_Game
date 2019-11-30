@@ -59,6 +59,23 @@ public class Chick : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            aud.PlayOneShot(soundJump, 1.5f);  //喇叭.播放一次音效(音效,音量)
+
+            // 重置重力加速度，讓剛體設定重新啟動，使重力影響不疊加，每次點擊都跳躍一樣的高度
+            rb2D.Sleep();
+
+            // 開始遊戲時啟動重力環境(初始為無重力狀態 gravityScale = 0)
+            // 小雞剛體.重力數值屬性 指定為1
+            rb2D.gravityScale = 1;
+
+            //小雞往上跳
+            //對小雞的剛體施加一個y軸(向上)方向的推力
+            //小雞剛體.增加推力方法.(二維向量(上下,左右));
+            rb2D.AddForce(new Vector2(0, -jumpHeight));
+        }
+
 
         //print(rb2D.velocity);
         //Rigidbody2D. SetRoatation(float) 設定角度[方法](角度)
@@ -73,9 +90,9 @@ public class Chick : MonoBehaviour
     /// </summary>
     public void Dead()
     {
-        print("死亡!!");
+       
         death = true;
-        gm.GameOver();
+        gm.GameOver();  
     }
 
     //固定幀數 要控制「物理」請寫在此事件內
@@ -93,23 +110,23 @@ public class Chick : MonoBehaviour
         if (hit.gameObject.name == "地板" )
         {
             Dead();
-            aud.PlayOneShot(soundHit, 1.5f);
+            aud.PlayOneShot(soundHit, 2.5f);
         }
     }
 
     // 事件:觸發開始 - 物件必須勾選 IsTrigger (穿透物件)
     private void OnTriggerEnter2D(Collider2D hit)
     {
-        if (hit.gameObject.name== "水管 下" || hit.gameObject.name == "水管 上")
+        if (hit.gameObject.name == "水管 下" || hit.gameObject.name == "水管 上")
         {
             Dead();
-            aud.PlayOneShot(soundHit, 1.7f);
+            aud.PlayOneShot(soundHit, 2.5f);
         }
     }
     // 事件:觸發離開 - 物件離開觸發區域執行一次  物件必須勾選 IsTrigger(穿透物件)
     private void OnTriggerExit2D(Collider2D hit)
     {
-        if(hit.gameObject.name == "加分")
+        if(hit.gameObject.name == "加分" && !death ) 
         {
             gm.AddScore();
             aud.PlayOneShot(soundAdd, 1.5f);

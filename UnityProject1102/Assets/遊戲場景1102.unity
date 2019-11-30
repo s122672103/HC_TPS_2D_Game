@@ -251,8 +251,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84934768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.031, y: -1.7, z: 0}
-  m_LocalScale: {x: 2.3012319, y: 2.1659198, z: 1.0322399}
+  m_LocalPosition: {x: 0.252, y: -1.08, z: 0}
+  m_LocalScale: {x: 3.475156, y: 2.3447917, z: 1.0322399}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -731,7 +731,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 503071530}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 718501616}
+        m_MethodName: Replay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &503071530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,6 +1035,7 @@ MonoBehaviour:
   pipe: {fileID: 2668852747914937567, guid: ddd45b109da2dff4dbd621acfc704c10, type: 3}
   goFinal: {fileID: 447183213}
   textScore: {fileID: 668555609}
+  textBest: {fileID: 344744574}
 --- !u!4 &718501617
 Transform:
   m_ObjectHideFlags: 0
@@ -1696,7 +1708,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 50.00267, y: 0.26422116}
+  m_Size: {x: 100, y: 0.26422116}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1710,7 +1722,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009011239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 437.826, y: -4.741, z: 0}
+  m_LocalPosition: {x: 867.4, y: -4.741, z: 0}
   m_LocalScale: {x: 17.6275, y: 5.19, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1728,7 +1740,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c217bec4c384fdd49a3cc59c8935b422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
   ground: {fileID: 2009011241}
 --- !u!61 &2009011243
 BoxCollider2D:
@@ -1748,13 +1759,13 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 50.00267, y: 0.26422116}
+    newSize: {x: 100, y: 0.26422116}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 0.23}
+  m_Size: {x: 100, y: 0.23}
   m_EdgeRadius: 0
 --- !u!1 &2105584679
 GameObject:
@@ -1916,7 +1927,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2129115428}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 718501616}
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2129115428
 MonoBehaviour:
   m_ObjectHideFlags: 0
