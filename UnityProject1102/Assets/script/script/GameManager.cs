@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Ground.speed = 5.5f;
-        Screen.SetResolution(720, 1280, false); //螢幕.設定解析度 (寬,高,是否全螢幕);
+        Screen.SetResolution( 450, 800, false); //螢幕.設定解析度 (寬,高,是否全螢幕);
         //靜態成員在載入場景時不會自動還原(故需在Start中設定還原)
         gameOver = false;
         //重複調用指令("方法名稱", 開始時間 , 間隔時間浮點數)
